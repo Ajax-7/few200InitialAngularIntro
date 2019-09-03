@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-entry',
@@ -7,13 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EntryComponent implements OnInit {
 
+  @Output() itemAdded = new EventEmitter<string>(); // 2. eventEmitter outputs
   constructor() { }
 
   ngOnInit() {
   }
 
   addItem(itemEl: HTMLInputElement) {
-    console.log(`Adding ${itemEl.value}`);
+    this.itemAdded.emit(itemEl.value); // 1.takes the value and puts it in the eventEmitter
     itemEl.value = '';
     itemEl.focus();
   }

@@ -1,3 +1,7 @@
+<div class="alert alert-danger"
+     *ngIf="items?.length === 0">
+  Your List is Empty! Please add some things!
+</div>
 <ul class="list-unstyled">
   <li class="alert "
       [ngClass]="{'alert-info': !item.completed, 'alert-success':item.completed}"
