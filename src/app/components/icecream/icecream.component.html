@@ -1,0 +1,12 @@
+<h1>Hello, my name is {{ title }}</h1>
+<p>{{ iceCreamFlavors }}</p>
+<ul>
+  <li *ngFor="let flavor of iceCreamFlavors"> {{flavor}}
+  </li>
+</ul>
+<div>
+  <input #flavorInput>
+  <input type="button"
+         (click)="addFlavor(flavorInput)"
+         value="Add Flavor">
+</div>
