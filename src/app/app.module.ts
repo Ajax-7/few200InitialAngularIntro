@@ -9,6 +9,10 @@ import { IceCreamComponent } from './components/icecream/icecream.component';
 import { NavComponent } from './components/nav/nav.component';
 import { TodoModule } from './features/todo/todo.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CounterComponent } from './components/counter/counter.component';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { reducers } from './reducers';
 
 @NgModule({
   declarations: [
@@ -16,13 +20,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     DashboardComponent,
     AboutComponent,
     IceCreamComponent,
-    NavComponent
+    NavComponent,
+    CounterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     TodoModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    StoreModule.forRoot(reducers),
+    StoreDevtoolsModule.instrument()
   ],
   providers: [],
   bootstrap: [AppComponent]
