@@ -1,11 +1,32 @@
-<div>
+<span>
   <input type="button"
+         [disabled]="(decrementDisabled$ | async)"
          class="btn btn-sm btn-primary"
          value="-"
          (click)="decrement()">
-  <span> {{ current }} </span>
+  <span> {{ current$ | async }} </span>
   <input type="button"
          class="btn btn-sm btn-primary"
          value="+"
          (click)="increment()">
-</div>
+  <input type="button"
+         class="btn btn-sm btn-primary"
+         value="Reset"
+         (click)="reset()">
+</span>
+<span class="btn-group"
+      role="group"
+      aria-label="Basic example">
+  <button type="button"
+          [disabled]="(by$ | async) === 1"
+          class="btn btn-secondary"
+          (click)="countBySet(1)">Count By 1</button>
+  <button type="button"
+          [disabled]="(by$ | async) === 3"
+          class="btn btn-secondary"
+          (click)="countBySet(3)">Count By 3</button>
+  <button type="button"
+          [disabled]="(by$ | async) === 5"
+          class="btn btn-secondary"
+          (click)="countBySet(5)">Count By 5</button>
+</span>
