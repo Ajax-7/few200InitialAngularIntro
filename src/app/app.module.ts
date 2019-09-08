@@ -7,6 +7,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AboutComponent } from './components/about/about.component';
 import { IceCreamComponent } from './components/icecream/icecream.component';
 import { NavComponent } from './components/nav/nav.component';
+import { BookListModule } from './features/booklist/booklist.module';
 import { TodoModule } from './features/todo/todo.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CounterComponent } from './components/counter/counter.component';
@@ -29,6 +30,7 @@ import { CounterEffects } from './effects/counter.effects';
     BrowserModule,
     AppRoutingModule,
     TodoModule,
+    BookListModule,
     BrowserAnimationsModule,
     StoreModule.forRoot(reducers),
     StoreDevtoolsModule.instrument(),

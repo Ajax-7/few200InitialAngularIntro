@@ -1,0 +1,19 @@
+<div class="alert alert-danger"
+     *ngIf="books?.length === 0">
+  Your Library is Empty! Please add some books!
+</div>
+<ul class="list-unstyled">
+  <li class="alert "
+      [ngClass]="{'alert-info': !book.onLoan, 'alert-success':book.onLoan}"
+      *ngFor="let book of books">
+      <span>
+        <input type="button"
+              (click)="toggleOnLoan(book)"
+              class="btn btn-sm btn-danger"
+              value="{{(book.onLoan)? 'Return' : 'Loan'}}">
+      </span>
+    <span [ngClass]="{'done': book.onLoan}"> {{book.title}}, by {{book.author}} : {{book.format}} </span>
+    <span *ngIf="book.onLoan"> --currently on loan-- </span>
+
+  </li>
+</ul>

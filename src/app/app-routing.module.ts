@@ -5,12 +5,17 @@ import { AboutComponent } from './components/about/about.component';
 import { IceCreamComponent } from './components/icecream/icecream.component';
 import { TodoComponent } from './features/todo/todo.component';
 import { CounterComponent } from './components/counter/counter.component';
+import { BookListComponent } from './features/booklist/booklist.component';
 
 
 const routes: Routes = [
   {// acts like a switch statement
     path: 'dashboard',
     component: DashboardComponent
+  },
+  {
+    path: 'booklist',
+    component: BookListComponent
   },
   {
     path: 'about',

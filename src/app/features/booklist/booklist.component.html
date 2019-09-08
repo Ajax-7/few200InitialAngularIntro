@@ -1,0 +1,5 @@
+<header class="page-header">
+  <h3>Book List</h3>
+</header>
+<app-entry (bookAdded)="addBook($event)"></app-entry>
+<app-list [books]="bookList$ | async"></app-list>
