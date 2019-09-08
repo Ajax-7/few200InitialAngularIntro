@@ -1,24 +1,11 @@
 <form class="form-group">
   <label for="title">Book</label>
-  <input name="title"
-         #title
-         class="form-control">
-         <div *ngIf="title.invalid && (title.dirty || title.touched)"
-          class="alert alert-danger">
-            <span *ngIf="title.errors.required">
-              Title is required.
-            </span>
-        </div>
+  <input id="title" name="title" #title
+          required class="form-control">
   <label for="author">Author</label>
-  <input name="author"
-        #author
-        class="form-control">
-        <div *ngIf="author.invalid && (author.dirty || author.touched)"
-         class="alert alert-danger">
-          <span *ngIf="author.errors.required">
-            Author is required.
-          </span>
-        </div>
+  <input id="author" name="author" #author
+        required class="form-control">
+
   <select name="bookFormat"
   #format
   class="btn btn-primary"
